@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "title": "createRoot",
+      "body": "createRoot lets you create a root to display React components inside a browser DOM node.\n\n",
+      "author": "Nico",
+      "id": 1
+    },
+    {
+      "title": "createRoot ",
+      "body": "createRoot lets you create a root to display React components inside a browser DOM node.\n\n",
+      "author": "Abdo",
+      "id": 2
+    }
+  ]
+}
