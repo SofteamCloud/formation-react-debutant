@@ -687,9 +687,10 @@ aller dans le dossier final-project
 
 
 #### Ressources:
-https://react.dev/
-https://kentcdodds.com/blog/javascript-to-know-for-react
-https://reactrouter.com/en/main
-https://tanstack.com/query/v3/docs/react/overview
-https://reactresources.com/
+
+- https://react.dev/
+- https://kentcdodds.com/blog/javascript-to-know-for-react
+- https://reactrouter.com/en/main
+- https://tanstack.com/query/v3/docs/react/overview
+- https://reactresources.com/
 
