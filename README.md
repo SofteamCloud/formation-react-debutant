@@ -683,4 +683,13 @@ Competences a apprendre en plus:
 - navigation entre les pages avec React Router
 - Build un package prêt pour production
 
-aller dans le dossier du final-peoject
+aller dans le dossier final-project
+
+
+#### Ressources:
+https://react.dev/
+https://kentcdodds.com/blog/javascript-to-know-for-react
+https://reactrouter.com/en/main
+https://tanstack.com/query/v3/docs/react/overview
+https://reactresources.com/
+
