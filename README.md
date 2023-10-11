@@ -664,6 +664,8 @@ Compétences a apprendre :
 - 6 CSS styles
 - 7 Hooks: useEffect, useRef, custom hook
 
+aller dans le dossier todo-app
+
 #### Projet final (blog):
 
 Compétences a apprendre :
@@ -671,6 +673,7 @@ Compétences a apprendre :
 - commencer un projet à partir du zéro
 - faire des appels HTTP via React Query
 - navigation entre les pages avec React Router
+- Gérer les formulaires
 - Build un package prêt pour production
 
 aller dans le dossier final-project
