@@ -92,7 +92,7 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
   <script type="text/javascript">
     const rootElement = document.getElementById('root')
     const element = document.createElement('div')
-    element.textContent = 'Hello World'
+    element.textContent = 'Hello World!'
     element.className = 'container'
     rootElement.appendChild(element)
   </script>
@@ -104,15 +104,15 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script type="text/javascript">
-    const rootElement = document.getElementById('root')
+    const rootElement = ReactDOM.createRoot(document.getElementById('root'))
     const element = React.createElement('div', {
       className: 'container',
       children: 'Hello World',
     })
-    ReactDOM.render(element, rootElement)
+    rootElement.render(element)
   </script>
 </body>
 ```
@@ -122,13 +122,13 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    const rootElement = document.getElementById('root')
+    const rootElement = ReactDOM.createRoot(document.getElementById('root'))
     const element = <div className="container">Hello World</div>
-    ReactDOM.render(element, rootElement)
+    rootElement.render(element)
   </script>
 </body>
 ```
@@ -138,35 +138,36 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    const rootElement = document.getElementById('root')
+    const rootElement = ReactDOM.createRoot(document.getElementById('root'))
     const children = 'Hello World'
     const className = 'container'
     const props = {children, className}
     const element = <div {...props} />
-    ReactDOM.render(element, rootElement)
+    rootElement.render(element)
   </script>
 </body>
 ```
 
-#### 6- Rendre deux éléments côte à côte avec les fragments React
+#### 6- Render deux éléments côte à côte avec les fragments React
 
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+  const rootElement = ReactDOM.createRoot(document.getElementById('root'))
     const element = (
       <>
         <span>Hello</span> <span>World</span>
       </>
     )
-    ReactDOM.render(element, document.getElementById('root'))
+    rootElement.render(element)
   </script>
 </body>
 ```
@@ -176,9 +177,9 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function Message({children}) {
       return <div className="message">{children}</div>
@@ -191,7 +192,7 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
       </div>
     )
 
-    ReactDOM.render(element, document.getElementById('root'))
+    rootElement.render(element)
   </script>
 </body>
 ```
@@ -203,10 +204,10 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
   <script type="text/babel">
-    const rootElement = document.getElementById('root')
+    const rootElement = ReactDOM.createRoot(document.getElementById('root'))
 
     function SayHello({firstName, lastName}) {
       return (
@@ -222,20 +223,22 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
 
     const element = <SayHello firstName={false} />
 
-    ReactDOM.render(element, rootElement)
+    rootElement.render(element)
   </script>
 </body>
 ```
 
-#### 9- Comprendre et utiliser l'interpolation dans JSX
+#### 9- Utiliser l'interpolation dans JSX
 
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+  const rootElement = ReactDOM.createRoot(document.getElementById('root'))
+
     function CharacterCount({text}) {
       return (
         <div>
@@ -253,46 +256,19 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
       </>
     )
 
-    ReactDOM.render(element, document.getElementById('root'))
+    rootElement.render(element)
   </script>
 </body>
 ```
 
-#### 10- Rerendre une application React
+#### 10- Styler les composants React avec className et des styles en ligne
 
 ```
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
-  <script type="text/babel">
-    const rootElement = document.getElementById('root')
-
-    function tick() {
-      const time = new Date().toLocaleTimeString()
-      const element = (
-        <>
-          <input value={time} />
-          <input value={time} />
-        </>
-      )
-      ReactDOM.render(element, rootElement)
-    }
-
-    setInterval(tick, 1000)
-  </script>
-</body>
-```
-
-#### 11- Styler les composants React avec className et des styles en ligne
-
-```
-<body>
-  <div id="root"></div>
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
     .box {
       border: 1px solid #333;
@@ -315,6 +291,8 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
     }
   </style>
   <script type="text/babel">
+    const rootElement = ReactDOM.createRoot(document.getElementById('root'))
+
     function Box({style, size, className = '', ...rest}) {
       const sizeClassName = size ? `box--${size}` : ''
       return (
@@ -341,15 +319,15 @@ const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
       </div>
     )
 
-    ReactDOM.render(element, document.getElementById('root'))
+    rootElement.render(element)
   </script>
 </body>
 ```
 
-#### 12- Utiliser des gestionnaires d'événements avec React
+#### 11- Utiliser des gestionnaires d'événements avec React
 
 ```
-// EventHnadler.jsx
+// EventHandler.jsx
 
 const EventHanlder = () => {
     const handleClick = (event) => {
@@ -362,11 +340,9 @@ const EventHanlder = () => {
 
     return (
       <div>
-        <p>There have been {state.eventCount} events.</p>
         <p>
           <button onClick={handleClick}>Click Me</button>
         </p>
-        <p>You typed: {state.username}</p>
         <p>
           <input onChange={handleChange} />
         </p>
@@ -377,7 +353,7 @@ const EventHanlder = () => {
 export default EventHanlder
 ```
 
-#### 13- Gérer l'état dans un composant React avec le hook useState
+#### 12- Gérer le state dans un composant React avec le hook useState
 
 ```
 // StateManagement.jsx
@@ -403,7 +379,7 @@ const StateManagement = () => {
 export default StateManagement
 ```
 
-#### 14- Gérer les effets secondaires dans un composant React avec le hook useEffect
+#### 13- Gérer les effets secondaires dans un composant React avec le hook useEffect
 
 ##### a- Utiliser un initialisateur différé avec useState
 
@@ -449,7 +425,7 @@ const EffectManagement = () => {
 export default EffectManagement
 ```
 
-#### 15- Créer des hooks personnalisés réutilisables
+#### 14- Créer des hooks personnalisés réutilisables
 
 ```
 // CustomHook.jsx
@@ -487,7 +463,7 @@ const CustomHook = () => {
 export default CustomHook
 ```
 
-#### 16- Manipuler le DOM avec les références (refs) React
+#### 15- Manipuler le DOM avec les références (refs) React
 
 ```
 // styles
@@ -578,7 +554,7 @@ const RefComponent = () => {
 export default RefComponent
 ```
 
-#### 17- Créer des formulaires basiques avec React
+#### 16- Créer des formulaires basiques avec React
 
 ```
 // Form.jsx
@@ -627,7 +603,7 @@ export default Form
 // validate form with react-hook-form
 ```
 
-#### 18- Afficher une liste
+#### 17- Afficher une liste
 
 ```
 // RenderList.jsx
@@ -641,7 +617,7 @@ const list = [
   {id: 'p', value: 'pear'},
 ]
 
-const RenderList = (key, defaultValue = '') => {
+const RenderList = () => {
   const [items, setItems] = React.useState(list)
 
   const addItem = () =>{
@@ -674,9 +650,23 @@ const RenderList = (key, defaultValue = '') => {
 export default RenderList
 ```
 
-#### Projet final: Blog:
+#### Projet 1 (todo-app):
 
-Competences a apprendre en plus:
+Compétences a apprendre :
+
+- 1 Components
+  - rendering
+  - JavaScript in JSX
+- 2 State
+- 3 Props
+- 4 Events
+- 5 Form
+- 6 CSS styles
+- 7 Hooks: useEffect, useRef, custom hook
+
+#### Projet final (blog):
+
+Compétences a apprendre :
 
 - commencer un projet à partir du zéro
 - faire des appels HTTP via React Query
@@ -685,12 +675,11 @@ Competences a apprendre en plus:
 
 aller dans le dossier final-project
 
-
 #### Ressources:
 
 - https://react.dev/
 - https://kentcdodds.com/blog/javascript-to-know-for-react
+- https://vitejs.dev/guide/
 - https://reactrouter.com/en/main
 - https://tanstack.com/query/v3/docs/react/overview
 - https://reactresources.com/
-
