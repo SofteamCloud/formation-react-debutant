@@ -10,7 +10,7 @@ export default function TodoList(props) {
   const [filtredTodos, setFiltredTodos] = useState([]);
 
   useEffect(() => {
-    console.log({ todos });
+    // console.log({ todos });
 
     if (todosFilter === filters.ALL) {
       setFiltredTodos(todos);
