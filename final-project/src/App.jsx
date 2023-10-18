@@ -1,33 +1,30 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// components
-import Home from './Home';
-import About from './About';
-import Create from './Create';
-import Navbar from './Navbar';
-import PostItem from './PostItem'
-import NotFound from './NotFound';
+import "./App.css";
 
-// styles
-import './App.css'
+import NavBar from "./NavBar";
+import PostList from "./PostList";
+import About from "./About";
+import Create from "./Create";
+import NotFound from "./NotFound";
+import PostItem from "./PostItem";
 
 function App() {
-
   return (
-    <Router>
-      <Navbar />
+    <BrowserRouter>
+      <NavBar />
 
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/create" element={<Create />} />
+          <Route path="/" element={<PostList />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blogs/:id" element={<PostItem />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/posts/:postId" element={<PostItem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </Router>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

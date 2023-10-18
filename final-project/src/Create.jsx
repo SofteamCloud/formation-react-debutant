@@ -1,55 +1,67 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Create = () => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('');
+export default function Create() {
+  const [form, setForm] = useState({
+    title: "",
+    body: "",
+    author: "",
+  });
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const blog = { title, body, author };
-    
-      fetch('http://localhost:8000/posts/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-    }).then(() => {
-      navigate('/');
-    })
-  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await fetch(`http://localhost:3004/posts/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
 
   return (
     <div className="create">
-      <h2>Add a New Blog</h2>
+      <h2>Add new form</h2>
       <form onSubmit={handleSubmit}>
-        <label>Blog title:</label>
-        <input 
-          type="text" 
-          required 
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+        <label>Blog title</label>
+        <input
+          type="text"
+          value={form.title}
+          name="title"
+          onChange={handleFormChange}
         />
-        <label>Blog body:</label>
+
+        <label>Blog body</label>
         <textarea
-          required
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
-        <label>Blog author:</label>
-        <select
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        >
-          <option value="">---</option>
-          <option value="Nicolas">Nicolas</option>
-          <option value="Stephane">Stephane</option>
+          type="text"
+          value={form.body}
+          name="body"
+          onChange={handleFormChange}
+        />
+
+        <label>Blog author</label>
+        <select name="author" value={form.author} onChange={handleFormChange}>
+          <option value="Yacouba">Yacouba</option>
+          <option value="Malek">Malek</option>
+          <option value="Hassen">Hassen</option>
         </select>
-        <button>Add Blog</button>
+
+        <button type="submit">Add post</button>
       </form>
     </div>
   );
 }
- 
-export default Create;
